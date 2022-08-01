@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS facturas (id SERIAL PRIMARY KEY, rut_empresa VARCHAR(255), numero_factura VARCHAR(255), tipo VARCHAR(2), monto DOUBLE, fecha VARCHAR(10));
