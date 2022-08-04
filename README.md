@@ -20,8 +20,9 @@ Todo lo descrito anteriormente se ilustra en el siguiente diagrama:
 
 ![image](https://user-images.githubusercontent.com/13786553/182243164-e51003a5-b7bb-4029-acc9-c0a6f0d4af2d.png)
 
-En este repositorio se encuentra el código fuente que soporta la parte de ingreso de facturas y el servidor de Apache Kafka, el cual requiere tener instalados docker y docker-compose. 
-Una vez instalados, usted puede inicial el servidor Apache Kafka situandose en el directorio principal que contiene el archivo docker-compose.yml e iniciarlo con el siguiente comando:
+En este repositorio se encuentra el código fuente que soporta la parte de ingreso de facturas y el servidor de Apache Kafka, el cual requiere tener instalados docker y docker-compose de forma local. 
+
+Una vez instalados, usted puede iniciar el servidor Apache Kafka situandose en el directorio principal que contiene el archivo docker-compose.yml y ejecutando el siguiente comando:
 
     docker-compose up -d
     
@@ -40,5 +41,5 @@ Compruebe que a medida que va registrando una factura su servidor Apache Kafka r
     docker exec -it kafka_kafka_1 /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic facturas --from-beginning
     
 
-De esta forma se cumple la primera parte del diagrama, en un próximo repositorio se incluirá el microservicio en NodeJs que se suscriba a ese servidor Apache Kafka y realice el envío de mail.
+De esta forma se cumple la primera parte del diagrama, en el repositorio https://github.com/Marcelogu/facturas-consumer se incluye el proceso en NodeJs que se suscribe a ese servidor Apache Kafka y realiza el envío de mail.
 

@@ -33,7 +33,7 @@ public class FacturaService implements FacturaServiceImpl{
     public Mono<Factura> createFactura(Factura factura) {
 
         return facturaRepository.save(factura).map(f -> {
-            kafkaTemplate.send("facturas", "{'rut': " + f.getRutEmpresa() + " , 'factura': " + f.getNumeroFactura() +"}");
+            kafkaTemplate.send("facturas", "{\"rut\": \"" + f.getRutEmpresa() + "\" , \"factura\":\"" + f.getNumeroFactura() +"\"}");
             return f;
         });
     }
